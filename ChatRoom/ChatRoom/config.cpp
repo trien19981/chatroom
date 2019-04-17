@@ -1,20 +1,20 @@
 #include "Config.h"
 
-Config::Config()
+config::config()
 {
 }
 
 
-Config::~Config()
+config::~config()
 {
 }
 
-void Config::taiConfigServer() {
+void config::taiConfigServer() {
 	std::string data;
 	f.open("configServer.txt", std::ios::in);
 
 	if (f.fail())
-		std::cerr << "Mo file loi" << std::endl;
+		std::cerr << "Mo file loi roi" << std::endl;
 	else {
 		int index = 1;
 		while (!f.eof()) {
@@ -34,7 +34,7 @@ void Config::taiConfigServer() {
 	}
 }
 
-void Config::taiFilter() {
+void config::taiFilter() {
 	std::string data;
 	f.open("filterData.txt", std::ios::in);
 
@@ -59,7 +59,7 @@ void Config::taiFilter() {
 		f.close();
 	}
 }
-void Config::taiMember() {
+void config::taiMember() {
 	f.open("userData.txt", std::ios::in);
 
 	if (f.fail())
@@ -74,7 +74,7 @@ void Config::taiMember() {
 	f.close();
 }
 
-void Config::taiBan() {
+void config::taiBan() {
 	f.open("banData.txt", std::ios::in);
 
 	if (f.fail())
@@ -89,8 +89,8 @@ void Config::taiBan() {
 	f.close();
 }
 
-void Config::taiMod() {
-	f.open("banData.txt", std::ios::in);
+void config::taiMod() {
+	f.open("modData.txt", std::ios::in);
 
 	if (f.fail())
 		std::cout << "Opening file fail" << std::endl;
@@ -104,24 +104,23 @@ void Config::taiMod() {
 	f.close();
 }
 
-std::map<std::string, std::string> Config::getdsFilter() {
+std::map<std::string, std::string> config::getdsFilter() {
 	return filterds;
 }
-std::vector<std::string> Config::getdsMember() {
+std::vector<std::string> config::getdsMember() {
 	return memberds;
 }
 
-std::vector<std::string> Config::getdsMod() {
+std::vector<std::string> config::getdsMod() {
 	return modds;
 }
-std::vector<std::string> Config::getdsBan() {
+std::vector<std::string> config::getdsBan() {
 	return bands;
 }
-
-std::string Config::getIpServer() {
+std::string config::getIpServer() {
 	return ipServer;
 }
 
-int Config::getPortServer() {
+int config::getPortServer() {
 	return portServer;
 }

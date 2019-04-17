@@ -8,23 +8,23 @@ phong::~phong()
 {
 }
 void phong::dsMember() {
-	config.taiMember();
-	memberds = config.getdsMember();
+	conf.taiMember();
+	memberds = conf.getdsMember();
 }
 
 void phong::dsFilter() {
-	config.taiFilter();
-	filterds = config.getdsFilter();
+	conf.taiFilter();
+	filterds = conf.getdsFilter();
 }
 
 void phong::dsMod() {
-	config.getdsMod();
-	modds = config.getdsMod();
+	conf.getdsMod();
+	modds = conf.getdsMod();
 }
 
 void phong::dsBan() {
-	config.taiBan();
-	bands = config.getdsBan();
+	conf.taiBan();
+	bands = conf.getdsBan();
 }
 bool phong::checkName(std::string username) {
 	for (std::vector<std::string>::iterator i = memberds.begin(); i != memberds.end(); i++) {

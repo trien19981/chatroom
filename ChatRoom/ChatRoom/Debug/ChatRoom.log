@@ -1,4 +1,0 @@
-﻿  Server.cpp
-c:\users\nem' máy\documents\github\chatroom\chatroom\chatroom\server.cpp(17): error C3867: 'Config::getPortServer': non-standard syntax; use '&' to create a pointer to member
-  Session.cpp
-  Generating Code...
