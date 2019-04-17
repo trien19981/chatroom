@@ -1,11 +1,3 @@
-#pragma once
-class Logger
-{
-public:
-	Logger();
-	~Logger();
-};
-
 #define _CRT_SECURE_NO_WARNINGS
 #pragma once
 #include<string>
@@ -22,4 +14,4 @@ public:
 private:
 	std::fstream f;
 };
-static Logger log;
+static Logger logger;

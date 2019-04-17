@@ -19,7 +19,7 @@ Server::Server()
 
 	listening = socket(AF_INET, SOCK_STREAM, NULL);
 
-	if (bind(listening,(SOCKADDR*)&addr,sizeof(addr))== SOCKET_ERROR)
+	if (bind(listening,(SOCKADDR*)&addr,sizeof(addr)) == SOCKET_ERROR)
 	{
 		std::string error = "khong ket noi duoc voi socket" + std::to_string(WSAGetLastError());
 		MessageBoxA(NULL, error.c_str(), "error", MB_OK | MB_ICONERROR);
