@@ -1,18 +1,23 @@
-#pragma once
+#define WIN32_LEAN_AND_MEAN
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
-#pragma comment(lib,"ws2_32.lib")
-#include<winsock.h>
-#include<string>
-#include<iostream>
+#pragma comment(lib, "Ws2_32.lib")
+#include<thread>
+//#include "Room.h"
+#include "Config.h"
+//#include "Session.h"
+#include <winsock.h>
 class Server
 {
 public:
-	Server(int port);
+	Server();
 	bool listenConnection();
 	~Server();
+	static void createHandle(SOCKET s);
 
 private:
 	SOCKADDR_IN addr;
 	int addrlen = sizeof(addr);
-	SOCKET listening;
+	SOCKET listening = INVALID_SOCKET;
+	//Room room;
+	Config config;
 };

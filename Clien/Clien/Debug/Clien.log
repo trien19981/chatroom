@@ -1,3 +1,2 @@
 ﻿  Client.cpp
-c:\users\nem' máy\source\repos\clien\clien\client.cpp(10): warning C4326: return type of 'main' should be 'int' instead of 'void'
-  Clien.vcxproj -> C:\Users\Nem' Máy\source\repos\Clien\Debug\Clien.exe
+  Clien.vcxproj -> C:\Users\Nem' Máy\Documents\GitHub\chatroom\Clien\Debug\Clien.exe

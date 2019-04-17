@@ -2,7 +2,7 @@
 
 
 
-Server::Server(int port)
+Server::Server()
 {
 	WSADATA wsadata;
 	WORD dllVersion = MAKEWORD(2, 1);
@@ -11,9 +11,11 @@ Server::Server(int port)
 		MessageBox(NULL, " khoi tao that bai", "loi", MB_OK | MB_ICONERROR);
 		exit(1);
 	}
+	config.loadConfigServer();
+
 
 	addr.sin_addr.s_addr = inet_addr("127.0.0.1");
-	addr.sin_port = htons(port);
+	addr.sin_port = htons(config.getPortServer);
 	addr.sin_family = AF_INET;
 
 	listening = socket(AF_INET, SOCK_STREAM, NULL);
@@ -30,6 +32,8 @@ Server::Server(int port)
 		exit(1);
 	}
 
+	std::cout << config.getIpServer() << ":" << config.getPortServer() << std::endl;
+
 }
 bool Server::listenConnection() {
 	std::cout << "cho ket noi...." << std::endl;
@@ -43,11 +47,11 @@ bool Server::listenConnection() {
 		char data[1024];
 		ZeroMemory(data, sizeof(data));
 		recv(newConnect, data, sizeof(data), 0);
-		std::cout << data << std::endl;
-		ZeroMemory(data, sizeof(data));
-		strcpy_s(data, "hello");
-		send(newConnect, data, sizeof(data), 0);
-		std::cout << data << std::endl;
+		if (strcmp(data,"2")==0) {
+			ZeroMemory(data, sizeof(data));
+			recv(newConnect, data, sizeof(data), 0);
+
+		}
 	}
 	return true;
 }

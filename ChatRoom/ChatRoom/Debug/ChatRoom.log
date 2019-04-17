@@ -1,4 +1,24 @@
-﻿  Server.cpp
-  main.cpp
+﻿  config.cpp
+c:\users\nem' máy\documents\github\chatroom\chatroom\chatroom\config.h(10): error C2011: 'config': 'class' type redefinition
+  c:\users\nem' máy\documents\github\chatroom\chatroom\chatroom\config.h(2): note: see declaration of 'config'
+c:\users\nem' máy\documents\github\chatroom\chatroom\chatroom\config.cpp(5): error C2027: use of undefined type 'config'
+  c:\users\nem' máy\documents\github\chatroom\chatroom\chatroom\config.h(2): note: see declaration of 'config'
+c:\users\nem' máy\documents\github\chatroom\chatroom\chatroom\config.cpp(6): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\nem' máy\documents\github\chatroom\chatroom\chatroom\config.cpp(7): warning C4508: '{ctor}': function should return a value; 'void' return type assumed
+c:\users\nem' máy\documents\github\chatroom\chatroom\chatroom\config.cpp(10): error C2027: use of undefined type 'config'
+  c:\users\nem' máy\documents\github\chatroom\chatroom\chatroom\config.h(2): note: see declaration of 'config'
+c:\users\nem' máy\documents\github\chatroom\chatroom\chatroom\config.cpp(11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\nem' máy\documents\github\chatroom\chatroom\chatroom\config.cpp(12): warning C4508: '{dtor}': function should return a value; 'void' return type assumed
+c:\users\nem' máy\documents\github\chatroom\chatroom\chatroom\config.cpp(15): error C2027: use of undefined type 'config'
+  c:\users\nem' máy\documents\github\chatroom\chatroom\chatroom\config.h(2): note: see declaration of 'config'
+c:\users\nem' máy\documents\github\chatroom\chatroom\chatroom\config.cpp(16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\nem' máy\documents\github\chatroom\chatroom\chatroom\config.cpp(16): error C2084: function 'int {ctor}(void)' already has a body
+  c:\users\nem' máy\documents\github\chatroom\chatroom\chatroom\config.cpp(5): note: see previous definition of '{ctor}'
+c:\users\nem' máy\documents\github\chatroom\chatroom\chatroom\config.cpp(20): error C2027: use of undefined type 'config'
+  c:\users\nem' máy\documents\github\chatroom\chatroom\chatroom\config.h(2): note: see declaration of 'config'
+c:\users\nem' máy\documents\github\chatroom\chatroom\chatroom\config.cpp(21): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\nem' máy\documents\github\chatroom\chatroom\chatroom\config.cpp(21): error C2084: function 'int {dtor}(void)' already has a body
+  c:\users\nem' máy\documents\github\chatroom\chatroom\chatroom\config.cpp(10): note: see previous definition of '{dtor}'
+  Server.cpp
+c:\users\nem' máy\documents\github\chatroom\chatroom\chatroom\server.cpp(46): error C2065: 'config': undeclared identifier
   Generating Code...
-  ChatRoom.vcxproj -> C:\Users\Nem' Máy\source\repos\ChatRoom\Debug\Server.exe
