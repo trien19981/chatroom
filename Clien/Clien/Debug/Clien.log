@@ -1,2 +1,3 @@
 ﻿  Client.cpp
+c:\users\nem' máy\documents\github\chatroom\clien\clien\client.cpp(67): warning C4002: too many arguments for function-like macro invocation 'RtlZeroMemory'
   Clien.vcxproj -> C:\Users\Nem' Máy\Documents\GitHub\chatroom\Clien\Debug\Clien.exe

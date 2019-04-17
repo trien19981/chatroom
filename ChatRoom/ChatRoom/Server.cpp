@@ -11,10 +11,9 @@ Server::Server()
 		MessageBox(NULL, " khoi tao that bai", "loi", MB_OK | MB_ICONERROR);
 		exit(1);
 	}
-	config.loadConfigServer();
 
-
-	addr.sin_addr.s_addr = inet_addr("127.0.0.1");
+	config.taiConfigServer();
+	addr.sin_addr.s_addr = inet_addr(config.getIpServer().c_str());
 	addr.sin_port = htons(config.getPortServer);
 	addr.sin_family = AF_INET;
 
@@ -31,6 +30,11 @@ Server::Server()
 		MessageBoxA(NULL, error.c_str(), "error", MB_OK | MB_ICONERROR);
 		exit(1);
 	}
+
+	phong.dsMember();
+	phong.dsBan();
+	phong.dsFilter();
+	phong.dsMod(); 
 
 	std::cout << config.getIpServer() << ":" << config.getPortServer() << std::endl;
 
@@ -50,6 +54,18 @@ bool Server::listenConnection() {
 		if (strcmp(data,"2")==0) {
 			ZeroMemory(data, sizeof(data));
 			recv(newConnect, data, sizeof(data), 0);
+			if (phong.checkName(std::string(data))) {
+				sess.themketnoi(newConnect, std::string(data));
+				std::cout << "da ket noi nguoi dung!" << std::endl;
+				char sucessMsg[15] = "sucessfully";
+				send(newConnect, sucessMsg, sizeof(sucessMsg), 0);
+				std::thread t(createHandle, newConnect);
+				t.detach();
+			}
+			else {
+				char errMsg[100] = "kiem tra lai ten!";
+				send(newConnect, errMsg, sizeof(errMsg), 0);
+			}
 
 		}
 	}
@@ -59,4 +75,8 @@ bool Server::listenConnection() {
 
 Server::~Server()
 {
+}
+
+void Server::createHandle(SOCKET s) {
+	sess.tinnhanluong(s);
 }

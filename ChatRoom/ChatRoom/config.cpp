@@ -9,7 +9,7 @@ Config::~Config()
 {
 }
 
-void Config::loadConfigServer() {
+void Config::taiConfigServer() {
 	std::string data;
 	f.open("configServer.txt", std::ios::in);
 
@@ -34,7 +34,7 @@ void Config::loadConfigServer() {
 	}
 }
 
-void Config::loadFilterList() {
+void Config::taiFilter() {
 	std::string data;
 	f.open("filterData.txt", std::ios::in);
 
@@ -59,35 +59,7 @@ void Config::loadFilterList() {
 		f.close();
 	}
 }
-void Config::loadBanList() {
-	f.open("banData.txt", std::ios::in);
-
-	if (f.fail())
-		std::cout << "Opening file fail" << std::endl;
-	else {
-		std::string line;
-		while (!f.eof()) {
-			std::getline(f, line);
-			banData.push_back(line);
-		}
-	}
-	f.close();
-}
-void Config::loadModList() {
-	f.open("banData.txt", std::ios::in);
-
-	if (f.fail())
-		std::cout << "Opening file fail" << std::endl;
-	else {
-		std::string line;
-		while (!f.eof()) {
-			std::getline(f, line);
-			modData.push_back(line);
-		}
-	}
-	f.close();
-}
-void Config::loadMemberList() {
+void Config::taiMember() {
 	f.open("userData.txt", std::ios::in);
 
 	if (f.fail())
@@ -96,25 +68,54 @@ void Config::loadMemberList() {
 		std::string line;
 		while (!f.eof()) {
 			std::getline(f, line);
-			memberData.push_back(line);
+			memberds.push_back(line);
 		}
 	}
 	f.close();
 }
-std::vector<std::string> Config::getMemberList() {
-	return memberData;
+
+void Config::taiBan() {
+	f.open("banData.txt", std::ios::in);
+
+	if (f.fail())
+		std::cout << "Opening file fail" << std::endl;
+	else {
+		std::string line;
+		while (!f.eof()) {
+			std::getline(f, line);
+			bands.push_back(line);
+		}
+	}
+	f.close();
 }
 
-std::vector<std::string> Config::getBanList() {
-	return banData;
+void Config::taiMod() {
+	f.open("banData.txt", std::ios::in);
+
+	if (f.fail())
+		std::cout << "Opening file fail" << std::endl;
+	else {
+		std::string line;
+		while (!f.eof()) {
+			std::getline(f, line);
+			modds.push_back(line);
+		}
+	}
+	f.close();
 }
 
-std::vector<std::string> Config::getModList() {
-	return modData;
+std::map<std::string, std::string> Config::getdsFilter() {
+	return filterds;
+}
+std::vector<std::string> Config::getdsMember() {
+	return memberds;
 }
 
-std::map<std::string, std::string> Config::getFilterList() {
-	return filterData;
+std::vector<std::string> Config::getdsMod() {
+	return modds;
+}
+std::vector<std::string> Config::getdsBan() {
+	return bands;
 }
 
 std::string Config::getIpServer() {

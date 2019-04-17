@@ -1,9 +1,11 @@
 #include "Server.h"
 
 int main() {
-	Server test(1088);
-	while (true) {
-		test.listenConnection();
+	Server server;
+	for (int i = 0; i < 100; i++) {
+		server.listenConnection();
 	}
+	system("pause");
+	return 0;
 
 }

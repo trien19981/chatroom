@@ -10,18 +10,17 @@ public:
 	phong();
 	~phong();
 
-	void getFilterList();
-	void getBanList();
-	void getModList();
-	void getMemberList();
-
-	bool checkUsername(std::string username);
+	void dsFilter();
+	void dsBan();
+	void dsMod();
+	void dsMember();
+	bool checkName(std::string username);
 
 private:
 
-	std::map<std::string, std::string> filterData;
-	std::vector<std::string> banData;
-	std::vector<std::string> modData;
-	std::vector<std::string> memberData;
+	std::map<std::string, std::string> filterds;
+	std::vector<std::string> bands;
+	std::vector<std::string> modds;
+	std::vector<std::string> memberds;
 
 };

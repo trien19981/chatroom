@@ -30,6 +30,15 @@
     <ClInclude Include="phong.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Session.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Control.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Server.cpp">
@@ -47,5 +56,37 @@
     <ClCompile Include="phong.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Session.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Control.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\..\Desktop\banData.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\Desktop\chat.log">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\Desktop\configSever.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\Desktop\filterData.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\Desktop\memberData.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\Desktop\modData.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\Desktop\userData.txt">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

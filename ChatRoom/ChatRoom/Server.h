@@ -2,9 +2,9 @@
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
 #pragma comment(lib, "Ws2_32.lib")
 #include<thread>
-//#include "Room.h"
+#include "phong.h"
 #include "Config.h"
-//#include "Session.h"
+#include "Session.h"
 #include <winsock.h>
 class Server
 {
@@ -18,6 +18,6 @@ private:
 	SOCKADDR_IN addr;
 	int addrlen = sizeof(addr);
 	SOCKET listening = INVALID_SOCKET;
-	//Room room;
+	phong phong;
 	Config config;
 };

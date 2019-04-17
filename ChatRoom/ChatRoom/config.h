@@ -14,28 +14,28 @@ public:
 	Config();
 	~Config();
 
-	void loadConfigServer();
-	void loadFilterList();
-	void loadBanList();
-	void loadModList();
-	void loadMemberList();
+	void taiConfigServer();
+	void taiFilter();
+	void taiBan();
+	void taiMod();
+	void taiMember();
 
-	std::vector<std::string> getMemberList();
-	std::map<std::string, std::string> getFilterList();
-	std::vector<std::string> getModList();
-	std::vector<std::string> getBanList();
+	std::vector<std::string> getdsMember();
+	std::map<std::string, std::string> getdsFilter();
+	std::vector<std::string> getdsMod();
+	std::vector<std::string> getdsBan();
 	std::string getIpServer();
 	int getPortServer();
 
 private:
 	std::fstream f;
 
-	std::map<std::string, std::string> filterData;
-	std::vector<std::string >banData;
-	std::vector<std::string> modData;
-	std::vector<std::string> memberData;
+	std::map<std::string, std::string> filterds;
+	std::vector<std::string >bands;
+	std::vector<std::string> modds;
+	std::vector<std::string> memberds;
 
 	std::string ipServer;
 	int portServer = 0;
 };
-static Config configptr;
+static Config config;
