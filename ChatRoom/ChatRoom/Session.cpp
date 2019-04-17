@@ -24,7 +24,7 @@ void Session::tinnhanluong(SOCKET s) {
 		ZeroMemory(completeMess, sizeof(completeMess));
 		if (recv(s, buffer, sizeof(buffer), 0) > 0) {
 			std::cout << getTimePrint() << " " << username << " " << buffer << std::endl;
-			log.viettinnhan(std::string(buffer), username, getTimeLog());
+			logger.viettinnhan(std::string(buffer), username, getTimeLog());
 			strcat_s(completeMess, username.c_str());
 			strcat_s(completeMess, ": ");
 			strcat_s(completeMess, buffer);

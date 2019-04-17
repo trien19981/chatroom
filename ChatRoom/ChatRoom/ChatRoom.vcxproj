@@ -136,13 +136,13 @@
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\..\..\..\..\Desktop\banData.txt" />
-    <Text Include="..\..\..\..\..\Desktop\chat.log" />
-    <Text Include="..\..\..\..\..\Desktop\configSever.txt" />
-    <Text Include="..\..\..\..\..\Desktop\filterData.txt" />
-    <Text Include="..\..\..\..\..\Desktop\memberData.txt" />
-    <Text Include="..\..\..\..\..\Desktop\modData.txt" />
-    <Text Include="..\..\..\..\..\Desktop\userData.txt" />
+    <Text Include="..\..\..\..\banData.txt" />
+    <Text Include="..\..\..\..\chat.log" />
+    <Text Include="..\..\..\..\configServer.txt" />
+    <Text Include="..\..\..\..\filterData.txt" />
+    <Text Include="..\..\..\..\memberData.txt" />
+    <Text Include="..\..\..\..\modData.txt" />
+    <Text Include="..\..\..\..\userData.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
