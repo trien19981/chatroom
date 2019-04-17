@@ -1,0 +1,6 @@
+﻿  phong.cpp
+  Server.cpp
+  main.cpp
+  Generating Code...
+Server.obj : error LNK2019: unresolved external symbol "public: void __thiscall phong::taophong(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?taophong@phong@@QAEXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) referenced in function "public: bool __thiscall Server::listenConnection(void)" (?listenConnection@Server@@QAE_NXZ)
+C:\Users\Nem' Mßy\Documents\GitHub\chatroom\ChatRoom\Debug\Server.exe : fatal error LNK1120: 1 unresolved externals

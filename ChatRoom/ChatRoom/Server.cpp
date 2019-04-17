@@ -14,7 +14,7 @@ Server::Server()
 
 	config.taiConfigServer();
 	addr.sin_addr.s_addr = inet_addr(config.getIpServer().c_str());
-	addr.sin_port = htons(config.getPortServer);
+	addr.sin_port = htons(config.getPortServer());
 	addr.sin_family = AF_INET;
 
 	listening = socket(AF_INET, SOCK_STREAM, NULL);
@@ -56,6 +56,24 @@ bool Server::listenConnection() {
 			recv(newConnect, data, sizeof(data), 0);
 			if (phong.checkName(std::string(data))) {
 				sess.themketnoi(newConnect, std::string(data));
+				std::cout << "da ket noi nguoi dung!" << std::endl;
+				char sucessMsg[15] = "sucessfully";
+				send(newConnect, sucessMsg, sizeof(sucessMsg), 0);
+				std::thread t(createHandle, newConnect);
+				t.detach();
+			}
+			else {
+				char errMsg[100] = "kiem tra lai ten!";
+				send(newConnect, errMsg, sizeof(errMsg), 0);
+			}
+
+		}
+		if (strcmp(data, "1") == 0) {
+			ZeroMemory(data, sizeof(data));
+			recv(newConnect, data, sizeof(data), 0);
+			if (phong.checkName(std::string(data))) {
+				sess.themketnoi(newConnect, std::string(data));
+				phong.taophong(std::string(data));
 				std::cout << "da ket noi nguoi dung!" << std::endl;
 				char sucessMsg[15] = "sucessfully";
 				send(newConnect, sucessMsg, sizeof(sucessMsg), 0);

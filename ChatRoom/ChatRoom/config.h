@@ -8,11 +8,11 @@
 #include "User.h"
 
 
-class config
+class Config
 {
 public:
-	config();
-	~config();
+	Config();
+	~Config();
 
 	void taiConfigServer();
 	void taiFilter();
@@ -38,4 +38,4 @@ private:
 	std::string ipServer;
 	int portServer = 0;
 };
-static config conf;
+static Config config;

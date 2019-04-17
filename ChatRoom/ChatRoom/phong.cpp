@@ -1,4 +1,5 @@
 #include "phong.h"
+#include<ctime>
 
 phong::phong()
 {
@@ -8,24 +9,38 @@ phong::~phong()
 {
 }
 void phong::dsMember() {
-	conf.taiMember();
-	memberds = conf.getdsMember();
+	config.taiMember();
+	memberds = config.getdsMember();
 }
 
 void phong::dsFilter() {
-	conf.taiFilter();
-	filterds = conf.getdsFilter();
+	config.taiFilter();
+	filterds = config.getdsFilter();
 }
 
 void phong::dsMod() {
-	conf.getdsMod();
-	modds = conf.getdsMod();
+	config.getdsMod();
+	modds = config.getdsMod();
 }
 
 void phong::dsBan() {
-	conf.taiBan();
-	bands = conf.getdsBan();
+	config.taiBan();
+	bands = config.getdsBan();
 }
+void phong::timeCreate() {
+	t = time(0);
+	struct tm* time_info = localtime(&t);
+	char buffer[80];
+	strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S", time_info);
+	timeStr = std::string(buffer);
+}
+void taophong(std::string data) {
+	std::string chuphong = data;
+	timeCreate();
+	
+}
+
+
 bool phong::checkName(std::string username) {
 	for (std::vector<std::string>::iterator i = memberds.begin(); i != memberds.end(); i++) {
 		if (username.compare(i->data()) == 0)
