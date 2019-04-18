@@ -9,6 +9,8 @@
 #include<sstream>
 #include"Logger.h"
 #include"Control.h"
+#include "phong.h"
+
 class Session
 {
 public:
@@ -20,6 +22,7 @@ public:
 
 	std::string getTimeLog();
 	std::string getTimePrint();
+	phong room;
 
 private:
 	std::map<SOCKET, std::string> connections;
@@ -29,5 +32,6 @@ private:
 
 private:
 	void setTime();
+	std::vector<std::string> tachtn(char message[]);
 };
 static Session sess;

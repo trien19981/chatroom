@@ -52,6 +52,7 @@ void Config::taiFilter() {
 			}
 			if (index == 2) {
 				value = data;
+				filterds.insert(std::make_pair(key, value));
 				index = 1;
 				continue;
 			}
@@ -90,7 +91,7 @@ void Config::taiBan() {
 }
 
 void Config::taiMod() {
-	f.open("banData.txt", std::ios::in);
+	f.open("modData.txt", std::ios::in);
 
 	if (f.fail())
 		std::cout << "Opening file fail" << std::endl;

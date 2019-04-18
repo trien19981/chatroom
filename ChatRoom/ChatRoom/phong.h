@@ -11,25 +11,38 @@ public:
 	phong();
 	~phong();
 
+	static phong* getIntance();
 	void dsFilter();
 	void dsBan();
 	void dsMod();
 	void dsMember();
 	bool checkName(std::string username);
+
+	std::vector<std::string> getModData();
+	std::map<std::string, std::string> getFilter();
 	void taophong(std::string data);
-	void inphong();
-	void timeCreate();
+
+	std::string getchuphong();
+	std::string getthoigian();
+	std::string getluat();
+	std::string user();
+
 private:
 	time_t t;
-	std::string timeStr;
-	std::string timeStr_1;
-private:
-	
+
+	std::string chuphong;
+	std::string timecre;
+	std::string ruler;
+
 	std::map<std::string, std::string> filterds;
 	std::vector<std::string> bands;
 	std::vector<std::string> modds;
 	std::vector<std::string> memberds;
-	std::string chuphong;
-	std::string timecre;
-	std::string ruler;
+
+private:
+
+	
+	void timeCreate();
+protected:
+	static phong* _instance;
 };
