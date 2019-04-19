@@ -26,6 +26,10 @@ public:
 	std::string getthoigian();
 	std::string getluat();
 	std::string user();
+	void themBan(std::string username);
+	void themMod(std::string username);
+	void xoaBan(std::string username);
+	void xoaMod(std::string username);
 
 private:
 	time_t t;
@@ -40,8 +44,8 @@ private:
 	std::vector<std::string> memberds;
 
 private:
-
-	
+	void LuuBan();
+	void LuuMod();
 	void timeCreate();
 protected:
 	static phong* _instance;

@@ -25,7 +25,9 @@ void Session::tinnhanluong(SOCKET s) {
 		if (recv(s, buffer, sizeof(buffer), 0) > 0) {
 			std::cout << getTimePrint() << " " << username << " " << buffer << std::endl;
 			logger.viettinnhan(std::string(buffer), username, getTimeLog());
-			std::vector<std::string> tach = tachtn(buffer);
+			char tem[1024];
+			strcpy(tem, buffer);
+			std::vector<std::string> tach = tachtn(tem);
 			std::vector<std::string>::iterator kt = tach.begin();
 
 			if (strcmp(kt->data(), "/info") == 0) {
@@ -64,7 +66,38 @@ void Session::tinnhanluong(SOCKET s) {
 					char Erm[30] = "khong duoc phep";
 					send(s, Erm, sizeof(Erm), 0);
 				}
+			}else if (strcmp(kt->data(), "/ban") == 0) {
+				if (username.compare(phong::getIntance()->user()) == 0) {
+					for (std::vector<std::string>::iterator it = tach.begin() + 1; it != tach.end(); it++) {
+						phong::getIntance()->themBan(it->data());
+					}
+				}
+				else {
+					char errorMess[30] = "khong duoc phep";
+					send(s, errorMess, sizeof(errorMess), 0);
+				}
+			}else if (strcmp(kt->data(), "/unmod") == 0) {
+				if (username.compare(phong::getIntance()->user()) == 0) {
+					for (std::vector<std::string>::iterator it = tach.begin() + 1; it != tach.end(); it++) {
+						phong::getIntance()->xoaMod(it->data());
+					}
+				}
+				else {
+					char errorMess[30] = "khong duoc phep";
+					send(s, errorMess, sizeof(errorMess), 0);
+				}
+			}else if (strcmp(kt->data(), "/mod") == 0) {
+				if (username.compare(phong::getIntance()->user()) == 0) {
+					for (std::vector<std::string>::iterator it = tach.begin() + 1; it != tach.end(); it++) {
+						phong::getIntance()->themMod(it->data());
+					}
+				}
+				else {
+					char errorMess[30] = "khong duoc phep";
+					send(s, errorMess, sizeof(errorMess), 0);
+				}
 			}
+
 			else{
 				strcat_s(completeMess, username.c_str());
 				strcat_s(completeMess, ": ");
@@ -78,11 +111,8 @@ void Session::tinnhanluong(SOCKET s) {
 						send(i->first, temp, sizeof(temp), 0);
 					}
 				}
-			
+		
 			}
-
-
-			
 		}
 		else {
 			std::cout << "nguoi dung ngat ket noi!" << std::endl;

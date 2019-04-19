@@ -121,7 +121,6 @@
     <ClInclude Include="Logger.h" />
     <ClInclude Include="phong.h" />
     <ClInclude Include="Session.h" />
-    <ClInclude Include="User.h" />
     <ClInclude Include="Server.h" />
   </ItemGroup>
   <ItemGroup>
@@ -132,7 +131,6 @@
     <ClCompile Include="Server.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Session.cpp" />
-    <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\..\..\..\Desktop\banData.txt" />
